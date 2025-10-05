@@ -1,0 +1,138 @@
+body {
+  background-color: #2c3e50; /* New BG color */
+  color: #ecf0f1;
+  font-family: "Roboto Mono", monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align to top */
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+#game-modes-buttons-div {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  width: 24rem;
+}
+
+.game-modes-buttons {
+  flex-grow: 1;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  /* Applying your original 3D style to buttons for consistency */
+  background-color: #3b4047; /* dark grey-blue */
+  border: 2px solid #2b2f34; /* outer dark border */
+  box-shadow: -2px -2px 3px rgba(255, 255, 255, 0.1),
+    /* top-left highlight */ 2px 2px 3px rgba(0, 0, 0, 0.5); /* bottom-right depth */
+  color: #ecf0f1;
+}
+
+.game-modes-buttons:active {
+  background-color: #2e333a;
+  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.6),
+    inset -2px -2px 3px rgba(255, 255, 255, 0.08);
+}
+
+#game-board {
+  display: grid;
+  gap: 1px; /* Tighter gap */
+  width: 90%; /* FIX: Give the container a defined width */
+  max-width: 95vw;
+  max-height: 75vh;
+}
+
+#game-board .cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  user-select: none;
+  aspect-ratio: 1 / 1;
+  transition: all 0.15s ease-out;
+}
+
+/* Your original unclicked cell style with new colors */
+#game-board .cell.type1 {
+  background-color: #34495e; /* New cell color */
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.1),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* Your original clicked cell style with new colors */
+#game-board .cell.type2 {
+  background-color: #2c3e50; /* New revealed cell color (matches BG) */
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Number colors - adjusted for better contrast on dark theme */
+#game-board .cell.num1 {
+  color: #3498db;
+}
+#game-board .cell.num2 {
+  color: #2ecc71;
+}
+#game-board .cell.num3 {
+  color: #e74c3c;
+}
+#game-board .cell.num4 {
+  color: #9b59b6;
+}
+#game-board .cell.num5 {
+  color: #f1c40f;
+}
+#game-board .cell.num6 {
+  color: #1abc9c;
+}
+#game-board .cell.num7 {
+  color: #ecf0f1;
+}
+#game-board .cell.num8 {
+  color: #95a5a6;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  #game-modes-buttons-div {
+    width: 90%;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px;
+    height: auto;
+  }
+
+  .game-modes-buttons {
+    width: 100%;
+  }
+
+  #game-board {
+    gap: 2px;
+  }
+
+  #game-board .cell {
+    font-size: 1rem;
+  }
+}
